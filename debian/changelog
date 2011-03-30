@@ -1,0 +1,38 @@
+peppermint-system (2.0.0) natty; urgency=low
+
+  * Rebased on current mintsystem source.
+  * Added ppa.launchpad.net priority to apt.conf.
+  * Removed issue and issue.net information.
+  * Added apt-fast script and adjusted apt command to use it.
+    rather than apt-get for all operations.
+  * Added axel as a dependency.
+  * Removed python-apt as a dependency.
+  * Now depends on mint-common instead of peppermint-common.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  23 Mar 2011 13:19:22 -0400
+
+peppermint-system (1.0.3) lucid; urgency=low
+
+  * Edited mintadjust.py to remove lsb adjustment
+
+ -- Kendall Tristan Weaver <kendalltweaver@gmail.com>  10 Apr 2010 12:54:00 -0400
+
+peppermint-system (1.0.2) lucid; urgency=low
+
+  * Added python-apt as a dependency
+  * Removed lsb release information
+
+ -- Kendall Tristan Weaver <kendalltweaver@gmail.com>  10 Apr 2010 11:21:00 -0400
+
+peppermint-system (1.0.1) peppermint; urgency=low
+
+  * Corrected directory targets in /debian/rules file
+
+ -- Kendall Weaver <kendall@astralnine.com>  05 Apr 2010 14:34:00 -0400
+
+peppermint-system (1.0.0) peppermint; urgency=low
+
+  * Initial release, forked from mintsystem
+
+ -- Kendall Weaver <kendall@astralnine.com>  27 Mar 2010 13:24:00 -0400
+

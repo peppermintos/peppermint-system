@@ -1,0 +1,12 @@
+#! /bin/sh
+
+### BEGIN INIT INFO
+# Provides:          mintsystem
+# Required-Start:    $local_fs $syslog $remote_fs dbus
+# Required-Stop:     $local_fs $syslog $remote_fs
+# Default-Start:     S
+# Default-Stop:  
+### END INIT INFO
+
+/usr/lib/linuxmint/mintSystem/mint-adjust.py
+
