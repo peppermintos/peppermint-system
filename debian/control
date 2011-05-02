@@ -7,6 +7,7 @@ Standards-Version: 3.7.2
 
 Package: peppermint-system
 Architecture: all
-Depends: mint-common, axel
+Depends: python, axel, python-apt
+Provides: mint-common, mintsystem
 Description: Peppermint OS System Base Package
  Used by the desktop and other mint tools to gather information and process common system tasks.

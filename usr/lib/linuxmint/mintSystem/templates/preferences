@@ -1,14 +1,6 @@
 Package: *
-Pin: release o=linuxmint
-Pin-Priority: 700
-
-Package: *
-Pin: origin packages.linuxmint.com
-Pin-Priority: 700
-
-Package: *
 Pin: origin ppa.launchpad.net
-Pin-Priority: 750
+Pin-Priority: 700
 
 Package: *
 Pin: release o=Ubuntu

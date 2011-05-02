@@ -1,3 +1,36 @@
+peppermint-system (2.0.5) natty; urgency=low
+
+  * Added necessary triggers for default apps adjustments.
+  * Now provides mintsystem in control file.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  01 May 2011 01:04:22 -0400
+
+peppermint-system (2.0.4) natty; urgency=low
+
+  * Now provides mint-common in control file.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  30 Apr 2011 02:08:28 -0400
+
+peppermint-system (2.0.3) natty; urgency=low
+
+  * Added version.py file to enable "apt version" command.
+  * Commented out dead command in apt help text.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  27 Apr 2011 17:10:41 -0400
+
+peppermint-system (2.0.2) natty; urgency=low
+
+  * Eliminated /usr/local to satisfy Launchpad.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  26 Apr 2011 18:32:18 -0400
+
+peppermint-system (2.0.1) natty; urgency=low
+
+  * Removed dependency on mint-common.
+  * Edited necessary files to justify dependency.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  26 Apr 2011 17:31:51 -0400
+
 peppermint-system (2.0.0) natty; urgency=low
 
   * Rebased on current mintsystem source.

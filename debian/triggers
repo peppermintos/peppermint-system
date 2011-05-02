@@ -7,4 +7,25 @@ interest /usr/share/opera
 interest /etc/linuxmint/adjustments
 interest /usr/share/synaptic/glade/window_main.glade
 interest /opt/firefox/firefox
+interest /usr/share/applications/gedit.desktop
+interest /usr/share/applications/catfish.desktop
+interest /usr/share/applications/galculator.desktop
+interest /usr/share/applications/gnome-alsamixer.desktop
+interest /usr/share/applications/gnome-mplayer.desktop
+interest /usr/share/applications/guayadeque.desktop
+interest /usr/share/applications/ubiquity-gtkui.desktop
+interest /usr/share/applications/lxkeymap.desktop
+interest /usr/share/applications/lxterminal.desktop
+interest /usr/share/applications/nm-connection-editor.desktop
+interest /usr/share/applications/gnome-power-preferences.desktop
+interest /usr/share/applications/software-properties-gtk.desktop
+interest /usr/share/applications/transmission-gtk.desktop
+interest /usr/share/applications/xchat.desktop
+interest /usr/share/applications/peppermint-screenlock.desktop
+interest /usr/share/pixmaps/ubiquity.png
+interest /usr/share/icons/Faenza/places/48/distributor-logo-ubuntu.png
+interest /usr/share/ubiquity/gtk/stepUserInfo.ui
+interest /usr/share/ubiquity/gtk/stepPrepare.ui
+interest /usr/share/xsessions/openbox-gnome.desktop
+interest /usr/share/xsessions/openbox-kde.desktop
 
