@@ -1,3 +1,210 @@
+peppermint-system (5.2.7) trusty; urgency=low
+
+  * Add "peppermint-info" dependency
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  Wed, 19 Aug 2015 16:40:00 +0000
+
+peppermint-system (5.2.6) trusty; urgency=low
+
+  * Create directory "/etc/default/grub.d"
+  * Add "/etc/default/grub.d/50_peppermint.cfg"
+  * Add "/etc/linuxmint/adjustments/15-grub-peppermint-adjustments.execute"
+  * Create directory "/etc/default/grub.d"
+  * Add "/etc/upstream-release/lsb-release"
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  Wed, 19 Aug 2015 16:35:00 +0000
+
+peppermint-system (5.2.5) trusty; urgency=low
+
+  * Add "mate-power-preferences" mintsystem adjustment
+  * Add "mate-power-statistics" mintsystem adjustment
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  Thu, 30 Apr 2015 12:30:00 +0000
+
+peppermint-system (5.2.4) trusty; urgency=low
+
+  * Removed "clipit" mintsystem adjustment
+  * Removed "xfce4-power-manager.xml" mintsystem adjustment
+  * Removed "logind.conf" mintsystem adjustment
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  Wed, 29 Apr 2015 12:57:00 +0000
+
+peppermint-system (5.2.3) trusty; urgency=low
+
+  * Add  xdg xfce4-power-manager.xml mintsystem adjustment
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  Fri, 17 Apr 2015 17:34:00 +0000
+
+peppermint-system (5.2.2) trusty; urgency=low
+
+  * Overwrite /usr/bin/lxlock via mintsystem adjustment
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  Fri, 17 Apr 2015 14:08:00 +0000
+
+peppermint-system (5.2.1) trusty; urgency=low
+
+  * Remove /usr/bin/xflock4 to launch lxlock
+  * Remove modified /usr/bin/lxlock
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  Fri, 17 Apr 2015 13:26:00 +0000
+
+peppermint-system (5.2.0) trusty; urgency=low
+
+  * Add /etc/systemd/logind.conf mintsystem adjustment
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  Fri, 17 Apr 2015 12:43:00 +0000
+
+peppermint-system (5.1.9) trusty; urgency=low
+
+  * Rename Wallpaper Changer to Wallpapers
+  * Add /usr/bin/xflock4 to launch lxlock
+  * Add modified /usr/bin/lxlock
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  Fri, 17 Apr 2015 12:29:00 +0000
+
+peppermint-system (5.1.8) trusty; urgency=low
+
+  * Add Ubuntu.info to mintsystem adjustmments
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  Fri, 10 Apr 2015 23:14:00 +0000
+
+peppermint-system (5.1.7) trusty; urgency=low
+
+  * fix sakura.desktop adjustment icon
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  07 Apr 2015 17:35:00 +0000
+
+peppermint-system (5.1.6) trusty; urgency=low
+
+  * add clipit, nitrogen, and sakura adjustments
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  07 Apr 2015 17:02:00 +0000
+
+peppermint-system (5.1.5) trusty; urgency=low
+
+  * remove guayadeque & lxterminal adjustments
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  30 Mar 2015 19:53:00 +0000
+
+peppermint-system (5.1.4) trusty; urgency=low
+
+  * Corrected spacing in /usr/bin/apt.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  09 Jun 2014 15:29:00 -0400
+
+peppermint-system (5.1.3) trusty; urgency=low
+
+  * Updated /etc/xdg/autostart/xbindkeys.desktop adjustment.
+  * Added adjustment for im-config.desktop.
+  * Added adjustment for gdebi.desktop.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  23 May 2014 13:18:00 -0400
+
+peppermint-system (5.1.2) trusty; urgency=low
+
+  * lxkeymap.desktop is now hidden by default.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  23 May 2014 11:10:00 -0400
+
+peppermint-system (5.1.1) trusty; urgency=low
+
+  * Removed adjustments for xfwm4 stuff.
+  * Added adjustment for xbindkeys.desktop.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  23 May 2014 10:55:00 -0400
+
+peppermint-system (5.1.0) trusty; urgency=low
+
+  * Added 'apt autopurge' command.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  08 May 2014 16:42:00 -0400
+
+peppermint-system (5.0.1) trusty; urgency=low
+
+  * /usr/bin/apt is now an overwrite to prevent conflict with upstream apt package.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  07 May 2014 10:46:00 -0400
+
+peppermint-system (5.0.0) trusty; urgency=low
+
+  * Updated for Peppermint Five.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  07 May 2014 10:31:00 -0400
+
+peppermint-system (4.0.5) raring; urgency=low
+
+  * Added /opt directory
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  23 Jun 2013 00:05:00 +0000
+
+peppermint-system (4.0.4) raring; urgency=low
+
+  * Undid changes in 4.0.3
+  * Added cups.conf to 20-cups-conf.overwrite
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  16 Jun 2013 22:35:00 +0000
+
+peppermint-system (4.0.3) raring; urgency=low
+
+  * Added modified /etc/init/cups.conf
+
+ -- Mark Greaves (PCNetSpec) <mark@pcnetspec.co.uk>  16 Jun 2013 20:59:00 +0000
+
+peppermint-system (4.0.2) raring; urgency=low
+
+  * software-properties-gtk now show "Updates" tab.
+  * Added "reinstall" to apt command.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  06 May 2013 14:55:00 -0400
+
+peppermint-system (4.0.1) raring; urgency=low
+
+  * Added fix for "Workspaces".
+
+ -- Kendall Weaver <kendall@peppermintos.com>  06 May 2013 13:41:00 -0400
+
+peppermint-system (4.0.0) raring; urgency=low
+
+  * Updated for Peppermint OS Four.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  16 Apr 2013 10:19:00 -0400
+
+peppermint-system (3.0.0) precise; urgency=low
+
+  * Matched with current mintsystem apt file.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  09 May 2012 22:34:00 -0400
+
+peppermint-system (2.0.10) natty; urgency=low
+
+  * Added adjustment for startupmanager interface.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  29 May 2011 18:56:51 -0400
+
+peppermint-system (2.0.9) natty; urgency=low
+
+  * Added adjustment for AMD card control panel.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  24 May 2011 16:32:03 -0400
+
+peppermint-system (2.0.8) natty; urgency=low
+
+  * Added community contributed translations.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  17 May 2011 19:06:24 -0400
+
+peppermint-system (2.0.7) natty; urgency=low
+
+  * Added distro.py hack to fix software-properties-gtk.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  11 May 2011 14:45:40 -0400
+
+peppermint-system (2.0.6) natty; urgency=low
+
+  * Removed apt-fast script.
+
+ -- Kendall Weaver <kendall@peppermintos.com>  05 May 2011 00:07:13 -0400
+
 peppermint-system (2.0.5) natty; urgency=low
 
   * Added necessary triggers for default apps adjustments.

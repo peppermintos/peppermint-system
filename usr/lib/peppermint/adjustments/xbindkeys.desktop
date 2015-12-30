@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=xbindkeys
+Comment=Start xbindkeys
+Exec=xbindkeys_peppermint
+Terminal=false
+Type=Application
+Categories=
+GenericName=

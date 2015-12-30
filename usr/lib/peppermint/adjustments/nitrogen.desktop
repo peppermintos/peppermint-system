@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=nitrogen
+Name=Wallpapers
+Categories=Utility;GTK
+Icon=nitrogen
+Comment=Browse and set desktop backgrounds
+Keywords=background;desktop;

@@ -1,0 +1,15 @@
+#!/usr/bin/python2
+import os
+import commands
+import syslog
+
+try:
+    if os.path.exists("/etc/grub.d/10_linux"):
+        if os.path.exists("/etc/linuxmint/info"):
+            mint_grub_title = commands.getoutput("grep GRUB_TITLE /etc/linuxmint/info | awk -F = '{print $2}'")
+        else:
+            mint_grub_title = "Peppermint GNU/Linux"
+        os.system("sed -i -e 's@OS=\"${GRUB_DISTRIBUTOR}\"@OS=\"%s\"@g' /etc/grub.d/10_linux" % mint_grub_title)
+except Exception, detail:
+    syslog.syslog("Couldn't adjust /etc/grub.d/10_linux: %s" % detail)
+

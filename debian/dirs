@@ -1,2 +1,5 @@
+etc/default/grub.d
+etc/upstream-release
 usr/lib/linuxmint
 usr/lib/linuxmint/mintSystem
+opt

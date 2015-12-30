@@ -1,0 +1,26 @@
+[Desktop Entry]
+Name=WebCam Viewer
+GenericName=GTK UVC video viewer
+X-GNOME-FullName=GTK UVC video viewer
+X-GNOME-FullName[cs]=Prohlížeč videa GTK UVC
+X-GNOME-FullName[de]=UVC-Video-Betrachter in GTK
+X-GNOME-FullName[en_AU]=GTK UVC video viewer
+X-GNOME-FullName[es]=Reproductor video GTK UVC
+X-GNOME-FullName[fr]=Logiciel GTK de visualisation de vidéo UVC
+X-GNOME-FullName[it]=GTK UVC visualizzatore video
+X-GNOME-FullName[lv]=GTK UVC video skatītājs
+X-GNOME-FullName[nl]=GTK UVC videokijker
+X-GNOME-FullName[pt]=Visualizador de vídeo GTK UVC
+X-GNOME-FullName[ru]=GTK UVC видео обозреватель
+X-GNOME-FullName[si]=GTK UVC වීඩියෝ දකින්නා
+X-GNOME-FullName[sr]=ГТК УВЦ видео приказивач
+X-GNOME-FullName[tr]=GTK UVC video görüntüleyici
+Comment=A video viewer and capturer for the linux uvc driver
+TryExec=guvcview
+Exec=guvcview
+Icon=/usr/share/pixmaps/guvcview/guvcview.png
+Terminal=false
+Type=Application
+Categories=Video;AudioVideo;
+X-GNOME-Gettext-Domain=guvcview
+StartupNotify=true
