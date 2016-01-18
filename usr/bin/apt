@@ -9,14 +9,14 @@ def usage():
 	print ""
 	print "Commands:"
 	print "autoclean	- Erase old downloaded archive files"
-	print "autoremove	- Remove automatically all unused packages" 
-	print "build     	- Build binary or source packages from sources" 
+	print "autoremove	- Remove automatically all unused packages"
+	print "build     	- Build binary or source packages from sources"
 	print "build-dep	- Configure build-dependencies for source packages"
-#	print "changelog	- View a package's changelog" 
-	print "check    	- Verify that there are no broken dependencies" 
-	print "clean    	- Erase downloaded archive files" 
+#	print "changelog	- View a package's changelog"
+	print "check    	- Verify that there are no broken dependencies"
+	print "clean    	- Erase downloaded archive files"
 	print "contains  	- List packages containing a file"
-	print "content   	- List files contained in a package" 
+	print "content   	- List files contained in a package"
 	print "deb      	- Install a .deb package"
 	print "depends  	- Show raw dependency information for a package"
 	print "dist-upgrade	- Perform an upgrade, possibly installing and removing packages"
@@ -26,17 +26,17 @@ def usage():
 	print "help     	- Show help for a command"
 	print "hold		- Hold a package"
 	print "install   	- Install/upgrade packages"
-	print "policy   	- Show policy settings" 
-	print "purge    	- Remove packages and their configuration files" 
+	print "policy   	- Show policy settings"
+	print "purge    	- Remove packages and their configuration files"
 	print "rdepends 	- Show reverse dependency information for a package"
 #	print "reinstall	- Download and (possibly) reinstall a currently installed package"
-	print "remove   	- Remove packages" 
-#	print "search   	- Search for a package by name and/or expression" 
+	print "remove   	- Remove packages"
+#	print "search   	- Search for a package by name and/or expression"
 #	print "show     	- Display detailed information about a package"
 	print "source   	- Download source archives"
 	print "sources   	- Edit /etc/apt/sources.list with nano"
 	print "unhold		- Unhold a package"
-	print "update   	- Download lists of new/upgradable packages" 
+	print "update   	- Download lists of new/upgradable packages"
 	print "upgrade  	- Perform a safe upgrade"
 	print "version  	- Show the installed version of a package"
 	print "			This apt has Super Cow Powers"
@@ -64,16 +64,16 @@ for argoption in argsuffix:
 
 if argcommand in ["install", "remove", "update", "upgrade", "dist-upgrade", "clean", "dselect-upgrade", "build-dep", "check", "autoremove", "autoclean"]:
 	aptcommand = "apt-fast"
-	command = sudo + " " + aptcommand + " " + argcommand + argoptions		
+	command = sudo + " " + aptcommand + " " + argcommand + argoptions
 elif argcommand in ["source", "moo"]:
 	aptcommand = "apt-fast"
-	command = aptcommand + " " + argcommand + argoptions		
+	command = aptcommand + " " + argcommand + argoptions
 #elif argcommand in ["search", "show", "changelog", "download"]:
 #	aptcommand = "aptitude"
 #	command = aptcommand + " " + argcommand + argoptions
 #elif argcommand in ["reinstall"]:
 #	aptcommand = "aptitude"
-#	command = sudo + " " + aptcommand + " " + argcommand + argoptions		
+#	command = sudo + " " + aptcommand + " " + argcommand + argoptions
 elif argcommand in ["stats", "depends", "rdepends", "policy"]:
 	aptcommand = "apt-cache"
 	command = aptcommand + " " + argcommand + argoptions
@@ -106,6 +106,6 @@ if argcommand in ["search", "show", "content", "version", "policy", "depends", "
 
 if (showHelp):
 	print "\"apt "+ argcommand + argoptions + "\" is equivalent to \"" + command + "\""
-else:	
+else:
 	os.system(command)
 

@@ -18,14 +18,14 @@
 
 # Test if the axel is installed
 if [ ! -x /usr/bin/axel ]
-then echo "axel is not installed, perform this?(y/n)"
+then echo "axel is not installed. Install it now?(y/n)"
     read ops
     case $ops in
          y) if apt-get install axel -y --force-yes
                then echo "axel installed"
-            else echo "unable to install the axel. you are using sudo?" ; exit
+            else echo "unable to install axel. are you using sudo?" ; exit
             fi ;;
-         n) echo "not possible usage apt-fast" ; exit ;;
+         n) echo "not possible to use apt-fast" ; exit ;;
     esac
 fi
 
