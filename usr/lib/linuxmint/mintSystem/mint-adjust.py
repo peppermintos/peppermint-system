@@ -4,13 +4,13 @@ import os
 import commands
 import sys
 from time import strftime
-#import fileinput
 
 # Prepare the log file
 global logfile
 logfile = open("/var/log/mintsystem.log", "w")
 
-def log (string):
+
+def log(string):
     logfile.writelines("%s - %s\n" % (strftime("%Y-%m-%d %H:%M:%S"), string))
     logfile.flush()
 
@@ -29,12 +29,8 @@ try:
         config['global']['enabled'] = "True"
     if ('restore' not in config):
         config['restore'] = {}
-#    if ('lsb-release' not in config['restore']):
-#        config['restore']['lsb-release'] = "True"
-#    if ('etc-issue' not in config['restore']):
-#        config['restore']['etc-issue'] = "True"
-    config.write()
 
+    config.write()
 
     # Exit if disabled
     if (config['global']['enabled'] == "False"):
@@ -57,31 +53,30 @@ try:
         for filename in os.listdir(adjustment_directory):
             basename, extension = os.path.splitext(filename)
             if extension == ".preserve":
-                filehandle = open(adjustment_directory + "/" + filename)
-                for line in filehandle:
-                    line = line.strip()
-                    array_preserves.append(line)
-                filehandle.close()
+                with open(adjustment_directory + "/" + filename) as filehandle:
+                    for line in filehandle:
+                        line = line.strip()
+                        array_preserves.append(line)
     overwrites = {}
     if os.path.exists(adjustment_directory):
         for filename in sorted(os.listdir(adjustment_directory)):
             basename, extension = os.path.splitext(filename)
             if extension == ".overwrite":
                 filehandle = open(adjustment_directory + "/" + filename)
-                for line in filehandle:
-                    line = line.strip()
-                    line_items = line.split()
-                    if len(line_items) == 2:
-                        source, destination = line.split()
-                        if destination not in array_preserves:
-                            overwrites[destination] = source
-                filehandle.close()
+                with open(adjustment_directory + "/" + filename) as filehandle:
+                    for line in filehandle:
+                        line = line.strip()
+                        line_items = line.split()
+                        if len(line_items) == 2:
+                            source, destination = line.split()
+                            if destination not in array_preserves:
+                                overwrites[destination] = source
 
     for key in overwrites.keys():
         source = overwrites[key]
         destination = key
         if os.path.exists(source):
-            if not "*" in destination:
+            if "*" not in destination:
                 # Simple destination, do a cp
                 if os.path.exists(destination):
                     os.system("cp " + source + " " + destination)
@@ -95,80 +90,6 @@ try:
                     if os.path.exists(matching_destination):
                         os.system("cp " + source + " " + matching_destination)
                         log(matching_destination + " overwritten with " + source)
-
-#    # Restore LSB information
-#    if (config['restore']['lsb-release'] == "True"):
-#        if os.path.exists("/etc/lsb-release"):
-#            lsbfile = open("/etc/lsb-release", "w")
-#            if (commands.getoutput("grep DISTRIB_ID /etc/linuxmint/info").strip() != ""):
-#                lsbfile.writelines(commands.getoutput("grep DISTRIB_ID /etc/linuxmint/info") + "\n")
-#            else:
-#                lsbfile.writelines("DISTRIB_ID=Peppermint\n")
-#            lsbfile.writelines("DISTRIB_" + commands.getoutput("grep \"RELEASE=\" /etc/linuxmint/info") + "\n")
-#            lsbfile.writelines("DISTRIB_" + commands.getoutput("grep CODENAME /etc/linuxmint/info") + "\n")
-#            lsbfile.writelines("DISTRIB_" + commands.getoutput("grep DESCRIPTION /etc/linuxmint/info") + "\n")
-#            lsbfile.close()
-#            log("/etc/lsb-release overwritten")
-#
-#    # Restore /etc/issue and /etc/issue.net
-#    if (config['restore']['etc-issue'] == "True"):
-#        issue = commands.getoutput("grep DESCRIPTION /etc/linuxmint/info").replace("DESCRIPTION=", "").replace("\"", "")
-#        if os.path.exists("/etc/issue"):
-#            issuefile = open("/etc/issue", "w")
-#            issuefile.writelines(issue + " \\n \\l\n")
-#            issuefile.close()
-#            log("/etc/issue overwritten")
-#        if os.path.exists("/etc/issue.net"):
-#            issuefile = open("/etc/issue.net", "w")
-#            issuefile.writelines(issue)
-#            issuefile.close()
-#            log("/etc/issue.net overwritten")
-#
-#    # Perform menu adjustments
-#    for filename in os.listdir(adjustment_directory):
-#        basename, extension = os.path.splitext(filename)
-#        if extension == ".menu":
-#            filehandle = open(adjustment_directory + "/" + filename)
-#            for line in filehandle:
-#                line = line.strip()
-#                line_items = line.split()
-#                if len(line_items) > 0:
-#                    if line_items[0] == "hide":
-#                        if len(line_items) == 2:
-#                            action, desktop_file = line.split()
-#                            if os.path.exists(desktop_file):
-#                                os.system("grep -q -F 'NoDisplay=true' %s || echo '\nNoDisplay=true' >> %s" % (desktop_file, desktop_file))
-#                                log("%s hidden" % desktop_file)
-#                    elif line_items[0] == "categories":
-#                        if len(line_items) == 3:
-#                            action, desktop_file, categories = line.split()
-#                            if os.path.exists(desktop_file):
-#                                categories = categories.strip()
-#                                os.system("sed -i -e 's/Categories=.*/Categories=%s/g' %s" % (categories, desktop_file))
-#                                log("%s re-categorized" % desktop_file)
-#                    elif line_items[0] == "exec":
-#                        if len(line_items) >= 3:
-#                            action, desktop_file, executable = line.split(' ', 2)
-#                            if os.path.exists(desktop_file):
-#                                executable = executable.strip()
-#                                found_exec = False
-#                                for desktop_line in fileinput.input(desktop_file, inplace=True):
-#                                    if desktop_line.startswith("Exec=") and not found_exec:
-#                                        found_exec = True
-#                                        desktop_line = "Exec=%s" % executable
-#                                    print desktop_line.strip()
-#                                log("%s exec changed" % desktop_file)
-#                    elif line_items[0] == "rename":
-#                        if len(line_items) == 3:
-#                            action, desktop_file, names_file = line.split()
-#                            names_file = names_file.strip()
-#                            if os.path.exists(desktop_file) and os.path.exists(names_file):
-#                                # remove all existing names, generic names, comments
-#                                os.system("sed -i -e '/^Name/d' -e '/^GenericName/d' -e '/^Comment/d' \"%s\"" % desktop_file)
-#                                # add provided ones
-#                                os.system("cat \"%s\" >> \"%s\"" % (names_file, desktop_file))
-#                                log("%s renamed" % desktop_file)
-#            filehandle.close()
 
 except Exception, detail:
     print detail
